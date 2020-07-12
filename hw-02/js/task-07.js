@@ -1,40 +1,35 @@
-// ЕЩЕ НЕ ДОДЕЛАЛ ДОП ЗАДАНИЕ! Застопорился на функции addLogin! ПОДСКАЖЕШЬ ?
-
-
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
 const isLoginValid = function (login) {
-  const isRange = login.length > 4 && login.length < 16;
+  const isRange = login.length > 3 && login.length < 17;
 
   return isRange;
 };
 
 const isLoginUnique = function (allLogins, login) {
-  for (const log of allLogins) {
-    if (log === login) {
-      return false;
-    }
-  }
-  return true;
+  let unique = allLogins.includes(login);
+  return unique;
 };
 
 const addLogin = function (allLogins, login) {
   let unvallid = isLoginValid(login);
 
-  if (unvallid === false) {
-  return "Ошибка! Логин должен быть от 4 до 16 символов";
-  } else  if (unvallid === true) {
-      let new = isLoginUnique(allLogins, login) {
-         
-      }
+  if (!isLoginValid(login)) {
+    return "Ошибка! Логин должен быть от 4 до 16 символов";
   }
+
+  if (isLoginUnique(logins, login)) {
+    return "Такой логин уже используется!";
+  }
+
+  return "Логін успішно доданий!";
 };
 
-const r1 = isLoginValid("qwertyqwerty");
-console.log(r1);
+// const r1 = isLoginValid("qwertyqwerty");
+// console.log(r1);
 
-const r2 = isLoginUnique(logins, "Poly");
-console.log(r2);
+// const r2 = isLoginUnique(logins, "Poly");
+// console.log(r2);
 
-const r4 = addLogin(logins, "Zodzod");
+const r4 = addLogin(logins, "Zod");
 console.log(r4);
