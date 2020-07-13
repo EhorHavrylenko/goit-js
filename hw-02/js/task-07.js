@@ -11,7 +11,7 @@ const isLoginUnique = function (allLogins, login) {
   return unique;
 };
 
-const addLogin = function (allLogins, login) {
+const addLogin = function (logins, login) {
   let unvallid = isLoginValid(login);
 
   if (!isLoginValid(login)) {
@@ -22,6 +22,7 @@ const addLogin = function (allLogins, login) {
     return "Такой логин уже используется!";
   }
 
+  logins.push(login);
   return "Логін успішно доданий!";
 };
 
@@ -31,5 +32,6 @@ const addLogin = function (allLogins, login) {
 // const r2 = isLoginUnique(logins, "Poly");
 // console.log(r2);
 
-const r4 = addLogin(logins, "Zod");
+const r4 = addLogin(logins, "Zodt");
 console.log(r4);
+
