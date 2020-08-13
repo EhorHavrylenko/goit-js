@@ -71,4 +71,5 @@ Car.getSpecs(mustang);
 console.log(mustang.price); // 2000
 
 mustang.price = 4000;
-console.log(mustang.price);  // 4000
+console.log(mustang.price); // 4000
+
